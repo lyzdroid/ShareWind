@@ -1,0 +1,13 @@
+<litepal>
+
+    <dbname value="share_wind"/>
+
+    <version value="1"/>
+
+    <list>
+
+        <mapping class="com.lyzdroid.sharewind.db.searchCityNameHistory"/>
+
+    </list>
+
+</litepal>
