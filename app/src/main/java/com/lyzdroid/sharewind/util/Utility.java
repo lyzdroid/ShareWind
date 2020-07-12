@@ -1,5 +1,7 @@
 package com.lyzdroid.sharewind.util;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.lyzdroid.sharewind.gson.CityInfo;
 import com.lyzdroid.sharewind.gson.WeatherNow;
@@ -15,10 +17,11 @@ public class Utility {
      * @return  若解析成功，返回解析后的CityInfo类的对象
      */
     public static CityInfo handleCityInfoResponse(String responseData) {
+        LogUtil.i("handleCityInfoResponse", responseData);
         try {
             return new Gson().fromJson(responseData, CityInfo.class);
         } catch (Exception e) {
-            e.printStackTrace();
+            LogUtil.e("handleCityInfoResponse", Log.getStackTraceString(e));
         }
         return null;
     }
@@ -29,13 +32,12 @@ public class Utility {
      * @return  若解析成功，返回解析后的WeatherNow类的对象
      */
     public static WeatherNow handleWeatherNowResponse(String responseData) {
+        LogUtil.i("handleWeatherNowResponse", responseData);
         try {
             return new Gson().fromJson(responseData, WeatherNow.class);
         } catch (Exception e) {
-            e.printStackTrace();
+            LogUtil.e("handleWeatherNowResponse", Log.getStackTraceString(e));
         }
         return null;
     }
-
-
 }
